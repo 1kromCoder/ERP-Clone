@@ -6,13 +6,15 @@ import { toast } from "react-hot-toast";
 export const Login = (
   data: ValueType,
   setIsLoading: Dispatch<SetStateAction<boolean>>,
-  setToken: Dispatch<SetStateAction<string | null>>
+  setToken: Dispatch<SetStateAction<string | null>>,
+  setCookie: any
 ) => {
   instance
     .post("/user/login", data)
     .then((data) => {
       setIsLoading(false);
       toast.success("Xush kelibsiz");
+      setCookie("token", data.data.accessToken);
       setTimeout(() => {
         setToken(data.data.accessToken);
         location.pathname = "/";

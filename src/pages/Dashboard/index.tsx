@@ -1,7 +1,8 @@
-import Home from "./Home";
 import Major from "./Major";
-import Students from "./Students";
 import Groups from "./Groups";
+import Students from "./Students";
 import Teachers from "./Teachers";
-
-export { Home, Groups, Major, Students, Teachers };
+import Home from "./Home";
+import MajorCreate from "./MajorCreate";
+import MajorMore from "./MajorMore";
+export { Major, Groups, Students, Teachers, Home, MajorCreate, MajorMore };

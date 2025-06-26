@@ -2,8 +2,9 @@ import React, { useContext, useState } from "react";
 import { LockOutlined, UserOutlined } from "@ant-design/icons";
 import { Button, Form, Input } from "antd";
 import { Toaster } from "react-hot-toast";
-import { Context } from "../context/Context";
 import { Login } from "../service/Auth";
+import { Context } from "../context/Context";
+import { useCookies } from "react-cookie";
 
 export interface ValueType {
   username: string;
@@ -12,11 +13,12 @@ export interface ValueType {
 
 const SignInForm: React.FC = () => {
   const { setToken } = useContext(Context);
+  const [_cookie, setCookie] = useCookies(["token"]);
   const [disable, setDisable] = useState<boolean>(false);
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const onFinish = (values: ValueType) => {
     setIsLoading(true);
-    Login(values, setIsLoading, setToken);
+    Login(values, setIsLoading, setToken, setCookie);
   };
   function handlePasswordChange(e: React.ChangeEvent<HTMLInputElement>) {
     if (e.target.value.length >= 8 && e.target.value.length <= 16) {

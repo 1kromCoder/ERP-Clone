@@ -10,11 +10,10 @@ export const Context = createContext<ContextType>({
 });
 
 export const GlobalContext: FC<{ children: ReactNode }> = ({ children }) => {
-  const [cookie, setCookie] = useCookies(["token"]);
+  const [cookie] = useCookies(["token"]);
   const [token, setToken] = useState<string | null>(cookie.token || null);
   const [showNavbar, setShowNavbar] = useState<boolean>(false);
 
-  setCookie("token", token);
   return (
     <Context.Provider value={{ setToken, token, showNavbar, setShowNavbar }}>
       {children}
