@@ -26,7 +26,7 @@ const Header = () => {
   }
   return (
     <>
-      <div className="bg-[#031529] p-2 py-[12px] border-b-[0.5px] border-slate-600 flex items-center justify-between">
+      <div className="bg-[#031529] sticky top-0 z-50 p-2 py-[12px] border-b-[0.5px] border-slate-600 flex items-center justify-between">
         <button
           onClick={() => setShowNavbar(!showNavbar)}
           className="text-white cursor-pointer"
@@ -34,6 +34,12 @@ const Header = () => {
           {showNavbar ? <MenuUnfoldOutlined /> : <MenuFoldOutlined />}
         </button>
         <div className="flex items-center gap-[5px]">
+          <button
+            type="button"
+            className="w-[90px] h-[28px] rounded-md hover:text-[var(--clr-gold)] mr-[10px] text-black bg-white border-[2px]"
+          >
+            <span>Sinxronlash</span>
+          </button>
           <Badge size="small" count={50} overflowCount={9}>
             <Button size="small" className="w-[28px] h-[30px]" type="default">
               {" "}

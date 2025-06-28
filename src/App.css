@@ -5,9 +5,11 @@
 }
 body {
   background-color: #e0e0e0;
+  overflow-y: hidden;
 }
 .ant-btn-primary,
-.ant-menu-item-selected {
+.ant-menu-item-selected,
+.ant-switch.ant-switch-checked {
   background-color: var(--clr-gold) !important;
 }
 .ant-input-affix-wrapper-focused,
@@ -26,4 +28,8 @@ body {
 .ant-pagination-item-active > a,
 .ant-spin-dot {
   color: var(--clr-gold) !important;
+}
+
+.ant-select-disabled .ant-select-selection-item {
+  color: black !important;
 }

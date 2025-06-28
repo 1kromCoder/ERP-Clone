@@ -1,10 +1,10 @@
 import { PlusOutlined } from "@ant-design/icons";
 import Caption from "../../components/Caption";
+import { getMajor } from "../../service/getMajor";
 import CustomTable from "../../components/CustomTable";
 import { Input } from "antd";
 import { useState, type ChangeEvent } from "react";
 import debounce from "../../hooks/debounce";
-import { getMajor } from "../../service/getMajor";
 
 const Major = () => {
   const [search, setSearch] = useState<string>("");

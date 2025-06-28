@@ -28,3 +28,19 @@ export const Delete = (
       }, 800);
     });
 };
+
+export const Create = (
+  url: string,
+  token: string | null,
+  data: any,
+  setIsLoading: Dispatch<SetStateAction<boolean>>,
+  navigate: NavigateFunction
+) => {
+  instance
+    .post(url, data, { headers: { Authorization: `Bearer ${token}` } })
+    .then(() => {
+      setIsLoading(false);
+      toast.success("Qo'shildi");
+      setTimeout(() => navigate(-1), 1000);
+    });
+};

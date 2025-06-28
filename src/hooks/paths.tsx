@@ -1,4 +1,6 @@
 import {
+  GroupCreate,
+  GroupMore,
   Groups,
   Home,
   Major,
@@ -22,7 +24,12 @@ export const paths = {
   major: "/major",
   majorCrud: "/major/create",
   majorMore: "/major/:id",
+  majorMoreCreateGroup: "/major/:id/create-group",
+  majorEdit: "/major/:id/edit",
   groups: "/groups",
+  groupsCreate: "/groups/create",
+  groupsMore: "/groups/:groupId",
+  groupsEdit: "/groups/:groupId/edit",
   students: "/students",
   teachers: "/teachers",
   notFound: "*",
@@ -68,6 +75,31 @@ export const DashboardRouteList = [
     id: 8,
     path: paths.majorMore,
     element: <MajorMore />,
+  },
+  {
+    id: 9,
+    path: paths.majorEdit,
+    element: <MajorCreate />,
+  },
+  {
+    id: 10,
+    path: paths.majorMoreCreateGroup,
+    element: <GroupCreate />,
+  },
+  {
+    id: 11,
+    path: paths.groupsCreate,
+    element: <GroupCreate />,
+  },
+  {
+    id: 12,
+    path: paths.groupsMore,
+    element: <GroupMore />,
+  },
+  {
+    id: 13,
+    path: paths.groupsEdit,
+    element: <GroupCreate />,
   },
 ];
 export const DashboardNavList = [
